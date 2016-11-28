@@ -1,0 +1,24 @@
+CONSTANT in_port, 01
+CONSTANT out_port, 02
+
+comparar:
+
+input s0, in_port	; s0 recebe conteudo das chaves
+store s0, 03		; Armazena na memoria o conteudo de s0 no endereço 1
+namereg s0, i		; renomeia s0 para i
+namereg s1, x		; renomeia s1 para x
+namereg s2, y		; renomeia s2 para y
+namereg s3, u		; renomeia s3 para z
+load x, 00		; carrega x com 00000000
+load y, 08		; carrega y com 00001000
+load u, 0A		; carrega u com 00001010
+compare i, x		; compara o valor de i com x
+jump nz, else_brach	; salta para else_branch se o valor da comparacao nao for zero
+add x, y		; x <= x + y
+jump if_done		; salta se acabar a instrução acima
+else_branch:		; caso o valor da comparação seja zero
+add x, u		; x <= x + u
+if_done:		; fim do if-then-else
+add x, 01		; soma o valor de x com 01
+OUTPUT x, out_port	; leds recebem o valor de x
+jump comparar		; salta para a rotina comparar

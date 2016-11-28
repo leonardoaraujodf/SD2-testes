@@ -1,0 +1,24 @@
+in_port             DSIN       1                  ; porta dos switches
+out_port            DSOUT      2                  ; saida de leds
+
+comparar: 
+
+                    IN        s0, in_port         ; s0 recebe conteudo das chaves
+                    STORE     s0, 3               ; Armazena na memoria o conteudo de s0 no endereço 3
+i                   EQU       s0                  ; renomeia s0 para i
+x                   EQU       s1                  ; renomeia s1 para x
+y                   EQU       s2                  ; renomeia s2 para y
+u                   EQU       s3                  ; renomeia s3 para u
+                    LOAD      x, 0                ; carrega x com 00000000
+                    LOAD      y, 8                ; carrega y com 00001000
+                    LOAD      u, 10               ; carrega u com 00001010
+                    COMP      i, x                ; compara o valor de i com x
+                    JUMP      NZ, else_branch      ; salta para else_branch se o valor da comparacao nao for zero
+                    ADD       x, y                ; x <= x + y
+                    JUMP      if_done             ; salta se acabar a instrução acima
+else_branch:                                      ; caso o valor da comparação seja zero
+                    ADD       x, u                ; x <= x + u
+if_done:                                          ; fim do if-then-else
+                    ADD       x, 1                ; soma o valor de x com 01
+                    OUT       x, out_port         ; leds recebem o valor de x
+                    JUMP      comparar            ; salta para a rotina comparar

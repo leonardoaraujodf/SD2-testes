@@ -1,0 +1,28 @@
+; programa para testar um laço for
+
+CONSTANT in_port, 01
+CONSTANT out_port, 02
+
+
+for_loop:
+
+	input s0, in_port	; s0 recebe conteudo das chaves
+	store s0, 3		; armazena na memoria o conteudo de s0 no endereço 3
+	namereg s0, i		; renomeia s0 para i
+	namereg s1, x		; renomeia s1 para x
+	namereg s2, y		; renomeia s2 para y
+	constant MAX, 20	; seta a constante MAX com 20
+	load x, 0A		; carrega x com 10
+loop_body:
+	add x, i		; x <= x + i
+	add i,01		; i++
+	load y, i		; y <= i
+	sub y, MAX		; y <= y - max
+	jump nz, loop_body	; salta se o resultado da operacao nao for zero
+done:
+	 
+	output x, out_port	; leds recebem o valor de x
+	jump for_loop		; salta para a rotina for_loop
+	
+
+

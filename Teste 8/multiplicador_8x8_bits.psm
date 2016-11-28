@@ -1,0 +1,38 @@
+; programa que multiplica um numero de 8 bits por outro de 8 bits e mostra na saida
+
+inport1           DSIN       1                    ; vem das chaves (8 bits)
+inport2           DSIN       2                    ; vem das chaves (8 bits)
+outport1          DSOUT      1                    ; vai para os leds (8 bits)
+outport2          DSOUT      2                    ; vai para os leds (8 bits)
+i                 EQU       s0                    ; renomeia s0 para i
+carregar:                                         ; rotina da multiplicação
+
+                    IN        s4, inport1         ; o reg s4 recebe o valor das chaves
+                    IN        s5, inport2         ; o reg s5 recebe o valor das chaves
+
+mult_soft:                                        ; rotina que carrega o index i com 8 e o byte menos significativo de
+; s6 com 0
+
+                    LOAD      s6, 0               ; carregar s6 com 0s
+                    LOAD      i, 8                ; carrega i com 8
+
+mult_loop:                                        ; rotina soma da multiplicação caso se detecte 1 no bit do multiplicador
+
+                    SR0       s5                  ; shift-right no registrador s5
+                    JUMP      NC, shift_prod      ; irá realizar um salto se o carry da operação anterior for 0
+                    ADD       s6, s4              ; s6 <= s4 + s6
+
+shift_prod: 
+
+                    SRA       s6                  ; shift-right com armazenamento do carry da operação anterior no bit
+						  ; mais significativo de s6
+                    SRA       s7                  ; shift-right com armazenamento do carry da operação anterior no bit
+						  ; mais significativo de s7
+                    SUB       i, 1                ; i--
+                    JUMP      NZ, mult_loop       ; caso i seja diferente de 0, jump para mult_loop
+                    OUT       s6, outport1        ; carrega out_port1 com s6
+                    OUT       s7, outport2        ; carrega out_port2 com s7
+                    JUMP      carregar            ; volta para a rotina carregar
+
+
+
