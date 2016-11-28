@@ -1,0 +1,99 @@
+; ==============================================================
+; PROGRAMA QUE REALIZA OPERAÇÕES COM BITS DEPENDENDO DOS VALORES
+; INSERIDOS NA CHAVE SW.
+; 
+; A -> NUMERO A
+; B -> NUMERO B
+; SELEC -> SELECAO DE OPERACAO
+; 
+; FORMATO DAS ENTRADAS:
+; 
+; CHAVES: |_|_|_|_|_|_|_|_|
+; 7 6 5 4 3 2 1 0
+; 
+; A = SW [2:0]
+; B = SW [5:3]
+; SELEC = SW [7:6]
+; 
+; OPERACOES ESCOLHIDAS
+; 
+; SELEC | OPERACAO
+; 00  |  A - B
+; 01  |  A>>B
+; 10  |  A/2
+; 	11  |  A<<B
+; 
+; ==============================================================
+SW                  DSIN       1
+LEDS                DSOUT       2
+ULA: 
+NUM_A               EQU       s0
+NUM_B               EQU       s1
+SELEC               EQU       s2
+                    IN        NUM_A, SW           ; A <= SW
+                    IN        NUM_B, SW           ; B <= SW
+                    IN        SELEC, SW           ; C <= SW
+                    AND       NUM_A, 7            ; A <= A AND 0000 0111
+                    AND       NUM_B, 56           ; B <= B AND 0011 1000
+                    AND       SELEC, $C0          ; SELEC <= SELEC AND 1100 0000
+                    SR0       NUM_B               ; B <= 000X XX00
+                    SR0       NUM_B               ; B <= 0000 XXX0
+                    SR0       NUM_B               ; B <= 0000 0XXX
+                    SR0       SELEC               ; SELEC <= 0XX0 0000
+                    SR0       SELEC               ; SELEC <= 00XX 0000
+                    SR0       SELEC               ; SELEC <= 000X X000
+                    SR0       SELEC               ; SELEC <= 0000 XX00
+                    SR0       SELEC               ; SELEC <= 0000 0XX0
+                    SR0       SELEC               ; SELEC <= 0000 00XX
+                    CALL      SUBTRACAO
+                    CALL      SHIFT_RIGHT
+                    CALL      DIVIDIR_A_2
+                    CALL      SHIFT_LEFT
+                    JUMP      FINALIZAR
+
+SUBTRACAO: 
+
+                    COMP      SELEC, 0            ; IF SELEC = 00, THEN Z <=1, ELSE Z <= 0
+                    RET       NZ
+                    SUB       NUM_A, NUM_B        ; A <= A-B
+                    RET       
+
+SHIFT_RIGHT: 
+
+                    COMP      SELEC, 1            ; IF SELEC = 01, THEN Z <= 1, ELSE Z <= 0
+                    RET       NZ
+                    COMP      NUM_B, 0            ; IF B = 00 THEN Z <= 1, ELSE Z <= 0
+                    RET      Z
+
+OK_SHIFT_RIGHT: 
+                    SR0       NUM_A
+                    SUB       NUM_B, 1
+                    JUMP      NZ, OK_SHIFT_RIGHT
+                    RET       
+
+
+DIVIDIR_A_2: 
+
+                    COMP      SELEC, 2            ; IF SELEC = 2, THEN Z <= 1, ELSE Z <=0
+                    RET       NZ
+                    SR0       NUM_A               ; A <= 0000 00XX
+                    RET       
+
+SHIFT_LEFT: 
+
+                    COMP      SELEC, 3            ; IF SELEC = 01, THEN Z <= 1, ELSE Z <= 0
+                    RET       NZ
+                    COMP      NUM_B, 0            ; IF B = 00 THEN Z <= 1, ELSE Z <= 0
+                    RET      Z
+
+OK_SHIFT_LEFT: 
+                    SL0       NUM_A
+                    SUB       NUM_B, 1
+                    JUMP      NZ, OK_SHIFT_LEFT
+                    RET       
+
+FINALIZAR: 
+
+                    OUT       NUM_A, LEDS         ; LEDS <= A
+                    JUMP      ULA                 ; REINICILIZA O PROGRAMA
+
