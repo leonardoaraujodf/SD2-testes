@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\author{Leonardo Amorim - 15/0039921}
+\title{\textbf{Teste 9 - Soma do quadrado de dois números de 4 bits}}
+\date{}
+\begin{document}
+\maketitle
+
+	 
+\textbf{Funcionamento do código}: Este programa em assembly tem o objetivo de somar dois números de quatro 
+bits elevados ao quadrado, da forma $a^2 + b^2$. O programa principal possui uma ordem de rotinas da forma mostrada na figura \ref{fig:rotinas}. A sequência de ações a serem realizadas no código se definem em limpar os dados de memória (realizado ao iniciar o programa pela primeira vez), ler os dados das chaves, elevar ao quadrado, escrever no led e retornar a ler os dados das chaves, continuando o loop.
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=1.0]{rotinas.jpg}
+	\caption{Forma de como as rotinas foram organizadas}
+	\label{fig:rotinas}
+\end{figure}
+
+	 Uma parte do código utilizado pode ser visualizado na figura \ref{fig:codigo}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{codigo.jpg}
+	\caption{Código utilizado}
+	\label{fig:codigo}
+\end{figure}
+
+	 Abaixo segue uma amostra do funcionamento do código. Neste momento está sendo realizado a primeira multiplicação do número $a\times a$. Isto pode ser visto na figura \ref{fig:simulacao1}. 
+
+\begin{figure}[h]
+	\includegraphics[scale=0.45]{simulacao1.jpg}
+	\caption{Simulação do código}
+	\label{fig:simulacao1}
+\end{figure}
+
+	\item Na figura \ref{fig:simulacao2} pode ser visto o resultado da operação $2^2 + 1^2 = 5 $, ao qual o valor aparece nos leds corretamente.
+
+\begin{figure}[h]
+	\includegraphics[scale=0.45]{simulacao2.jpg}
+	\caption{Simulação do código - Resultado do uso dos dois números da matrícula 15/0039921}
+	\label{fig:simulacao2}
+\end{figure}
+
+\end{document}
