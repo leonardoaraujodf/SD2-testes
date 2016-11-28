@@ -1,0 +1,98 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Oct 06 19:27:05 2016
+# Process ID: 5988
+# Current directory: C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1508 C:\Users\Familia\Documents\Leonardo\UnB\4 Semestre\Sistemas Digitais II - Teoria\Teste_6\teste_6\teste_6.xpr
+# Log file: C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/vivado.log
+# Journal file: C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.xpr}
+update_compile_order -fileset sources_1
+file mkdir C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new
+file mkdir C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new
+file mkdir C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new
+file mkdir C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new
+file mkdir C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new
+file mkdir {C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new}
+close [ open {C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new/testbench_memory.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sim_1/new/testbench_memory.vhd}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim
+launch_simulation
+source testbench_memory.tcl
+run 10 us
+close_sim

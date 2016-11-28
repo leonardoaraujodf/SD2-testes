@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Oct 05 22:03:19 2016
+# Process ID: 3612
+# Current directory: C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4524 C:\Users\Familia\Documents\Leonardo\UnB\4 Semestre\Sistemas Digitais II - Teoria\Teste_6\teste_6\teste_6.xpr
+# Log file: C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/vivado.log
+# Journal file: C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.xpr}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sources_1/new/controlador_fsm.vhd} w ]
+add_files {{C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sources_1/new/controlador_fsm.vhd}}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sources_1/new/top_level.vhd} w ]
+add_files {{C:/Users/Familia/Documents/Leonardo/UnB/4 Semestre/Sistemas Digitais II - Teoria/Teste_6/teste_6/teste_6.srcs/sources_1/new/top_level.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

@@ -1,0 +1,18 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto c1697ab19a21426fab5631d4ef3021b7 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot testbench_memory_behav xil_defaultlib.testbench_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.controlador_fsm [controlador_fsm_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_memory [ram_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_level [top_level_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench_memory
+Built simulation snapshot testbench_memory_behav
